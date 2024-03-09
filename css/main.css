@@ -4,9 +4,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-html {
-    background: url(../images/Firefly\ background\ image\ of\ music\ nodes\ in\ 3d\ 45718.jpg);
-
+html{
+    background: url(../images/Firefly\ create\ a\ backgorund\ picture\ for\ music\ mixture\ 52603.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     background-size: cover;
 }
 
