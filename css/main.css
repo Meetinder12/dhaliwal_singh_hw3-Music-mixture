@@ -5,11 +5,13 @@
 }
 
 html{
-    background: url(../images/Firefly\ create\ a\ backgorund\ picture\ for\ music\ mixture\ 52603.jpg);
+    background: url(../images/Firefly\ create\ a\ backgorund\ picture\ for\ music\ mixture\ 52603.jpg) ;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+    background-color: rgba(56, 55, 55, 0.762);
+    background-blend-mode: overlay;
 }
 
 h1 {
@@ -18,3 +20,4 @@ h1 {
     color: yellow;
 
 }
+
