@@ -21,3 +21,22 @@ h1 {
 
 }
 
+audio { display: block; }
+
+
+.hidden { display: none; }
+
+.audio-controls { margin-top: 1.5em; border-top: thin solid #333; }
+
+.audio-controls button {
+  padding: 0.5em 1em;
+  margin-top: 0.5em;
+  background-color: green;
+  color: white;
+  font-size: 1.25em;
+  cursor: pointer;
+}
+
+.track-ref { cursor: pointer; padding: 1em; }
+
+
