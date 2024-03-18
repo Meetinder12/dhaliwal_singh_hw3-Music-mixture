@@ -10,18 +10,30 @@ html{
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    background-color: rgba(180, 178, 178, 0.762);
+    background-color: rgba(156, 120, 73, 0.762);
     background-blend-mode: overlay;
 }
 
 h1 {
     text-align: center;
     font-size: 90px;
-    color: #026528;
+    color: #000000;
 
 }
 
-audio { display: block; }
+.instruments div {
+    margin-bottom: 50px;
+    display: inline;
+    align-self: center;
+}
+
+.instruments img {
+    width: 15%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+
+/* audio { display: block; } */
 
 
 .hidden { display: none; }
@@ -38,5 +50,6 @@ audio { display: block; }
 }
 
 .track-ref { cursor: pointer; padding: 1em; }
+
 
 
