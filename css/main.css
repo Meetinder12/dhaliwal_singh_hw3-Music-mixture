@@ -5,7 +5,7 @@
 }
 
 html{
-    background: url(../images/Firefly\ create\ a\ backgorund\ picture\ for\ music\ mixture\ 52603.jpg) ;
+    background: url(../images/background.jpg) ;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -21,16 +21,19 @@ h1 {
 
 }
 
+.instruments {
+    text-align: center;
+}
+
 .instruments div {
     margin-bottom: 50px;
     display: inline;
-    align-self: center;
+    align-content: center;
 }
 
 .instruments img {
     width: 15%;
     aspect-ratio: 3/2;
-    object-fit: contain;
 }
 
 /* audio { display: block; } */
