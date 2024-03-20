@@ -20,11 +20,13 @@ function resetBoard() {
 }
 
 function changePieces(id){
+
     document.getElementById("guitar").src="images/guitar"+ id + ".jpg";
     document.getElementById("drum").src="images/drum"+ id + ".jpg";
     document.getElementById("piano").src="images/piano"+ id + ".jpg";
     document.getElementById("volin").src="images/volin"+ id + ".jpg";
 	document.getElementById("flute").src="images/flute"+ id + ".jpg";
+
 }
 
 function handleStartDrag() { 
@@ -115,3 +117,4 @@ const  	albumCovers = document.querySelectorAll(".instruments img"),
 		pauseButton.addEventListener('click', pauseAudio);
 		
 		volSlider.addEventListener('change', setVolume);
+
