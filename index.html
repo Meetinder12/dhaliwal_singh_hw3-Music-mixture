@@ -12,6 +12,14 @@
     </header>
 
     <main>
+        <section id="container">
+            <div class="dropzone">Drop music on me</div>
+            <div class="dropzone">Drop music on me</div>
+            <div class="dropzone">Drop music on me</div>
+            <div class="dropzone">Drop music on me</div>
+            <div class="dropzone">Drop music on me</div>
+        </section>
+
         <Section class="instruments">
 
             <audio id="audioEl" src="audio/glow.mp3"></audio>
@@ -25,25 +33,15 @@
 
         </section>
 
-        <section class="dropzone">
-            <div class="dropzone 1"></div>
-            <div class="dropzone 2"></div>
-            <div class="dropzone 3"></div>
-            <div class="dropzone 4"></div>
-            <div class="dropzone 5"></div>
-        </section>
-
-       
+        <div id="audio-controls">
+            <button id="play-btn">Play</button>
+            <button id="pause-btn">Pause</button>
+            <button id="rewind-btn">Rewind</button>
+            <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1">
+          </div>
+          
+        <script src="js/main.js"></script>
     </main>
-    <footer>
-        <section class="audio-controls">
-            <button id="playButton">PLAY</button>
-            <button id="pauseButton">PAUSE</button>
-            <button id="rewindButton">REWIND</button>
-
-            <input id="volumeControl" type="range" min="0" max="100" step="1">
-        </section>
-    </footer>
     
 </body>
 </html>
