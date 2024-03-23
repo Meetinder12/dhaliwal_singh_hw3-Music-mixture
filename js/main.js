@@ -1,4 +1,4 @@
-let theButtons = document.querySelectorAll("#buttonHolder img"),
+ let theButtons = document.querySelectorAll("#buttonHolder img"),
 	theHeading = document.querySelector("#headLine h1"),
 	puzzleBoard = document.querySelector(".puzzle-board"),
 	puzzlePieces = document.querySelectorAll(".puzzle-pieces img"),
