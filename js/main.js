@@ -1,3 +1,4 @@
+
 const dragImage = document.querySelector('#dragImage');
 const dropbox = document.querySelector('#dropbox');
 const audioPlayer = document.querySelector('#audioPlayer');
@@ -40,3 +41,4 @@ rewindBtn.addEventListener('click', () => {
 volumeControl.addEventListener('input', () => {
   audio.volume = volumeControl.value;
 });
+
