@@ -1,17 +1,17 @@
 
-const dragImage = document.querySelector('#dragImage');
-const dropbox = document.querySelector('#dropbox');
-const audioPlayer = document.querySelector('#audioPlayer');
+const instruments = document.querySelector('#instruments');
+const dropzone = document.querySelector('.dropzone');
+const audioPlayer = document.querySelector('.audioPlayer');
 
-dragImage.addEventListener('dragstart', function(e) {
+instruments.addEventListener('dragstart', function(e) {
     e.dataTransfer.setData('text/plain', 'dragging');
 });
 
-dropbox.addEventListener('dragover', function(e) {
+dropzone.addEventListener('dragover', function(e) {
     e.preventDefault();
 });
 
-dropbox.addEventListener('drop', function(e) {
+dropzone.addEventListener('drop', function(e) {
     e.preventDefault();
     const data = e.dataTransfer.getData('text/plain');
     if (data === 'dragging') {
@@ -20,25 +20,24 @@ dropbox.addEventListener('drop', function(e) {
     }
 });
 
-const audio = document.getElementById('audio');
-const playBtn = document.getElementById('play-btn');
-const pauseBtn = document.getElementById('pause-btn');
-const rewindBtn = document.getElementById('rewind-btn');
-const volumeControl = document.getElementById('volume-control');
+const audio = document.querySelector('#audio');
+  const playBtn = document.querySelector('#play-btn');
+  const pauseBtn = document.querySelector('#pause-btn');
+  const rewindBtn = document.querySelector('#rewind-btn');
+  const volumeControl = document.querySelector('#volume-control');
 
-playBtn.addEventListener('click', () => {
-  audio.play();
-});
+  playBtn.addEventListener('click', () => {
+    audio.play();
+  });
 
-pauseBtn.addEventListener('click', () => {
-  audio.pause();
-});
+  pauseBtn.addEventListener('click', () => {
+    audio.pause();
+  });
 
-rewindBtn.addEventListener('click', () => {
-  audio.currentTime = 0;
-});
+  rewindBtn.addEventListener('click', () => {
+    audio.currentTime = 0;
+  });
 
-volumeControl.addEventListener('input', () => {
-  audio.volume = volumeControl.value;
-});
-
+  volumeControl.addEventListener('input', () => {
+    audio.volume = volumeControl.value;
+  });
