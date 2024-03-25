@@ -43,20 +43,19 @@ h1 {
 }
 
 
-.instruments {
+#instruments {
     text-align: center;
     margin-top: 60px;
     position: absolute;
     cursor: grab;
 }
 
-.instruments div {
+#instruments div {
     margin-bottom: 50px;
-    display: inline;
-    
+    display: inline;    
 }
 
-.instruments img {
+#instruments img {
     width: 10%;
     aspect-ratio: 3/2;
 }
