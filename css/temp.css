@@ -1,0 +1,94 @@
+
+/* It is empty at the moment  */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    background: url(../images/background.jpg) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(156, 120, 73, 0.762);
+    background-blend-mode: overlay;
+}
+
+h1 {
+    text-align: center;
+    font-size: 90px;
+    color: #000000;
+
+}
+
+#container {
+    position: relative;
+    text-align: center;
+    display: inline;
+}
+
+#container div{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    text-align: center;
+    padding: 20px;
+    color: #000000;
+}
+
+
+#instruments {
+    text-align: center;
+    margin-top: 60px;
+    display: flex;
+    cursor: grab;
+}
+
+#instruments div {
+    margin-bottom: 50px;
+    display: inline;    
+}
+
+.dropzone img {
+    position: absolute;
+    padding: 0;
+}
+
+.tl img { right: 0; bottom: 0; }
+.tr img { bottom: 0; }
+.bl img { right: 0; }
+
+
+/* audio { display: block; } */
+
+
+#audio-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 300px;
+  }
+
+  button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  input[type="range"] {
+    width: 150px;
+    margin: 0 10px;
+  }
+
+
+
