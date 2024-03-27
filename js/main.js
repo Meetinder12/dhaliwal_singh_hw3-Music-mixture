@@ -1,32 +1,14 @@
-
-const instruments = document.querySelector('#instruments');
+const instruments = document.querySelector('#instruments div');
 const dropzone = document.querySelector('.drop-zone');
 const audioPlayer = document.querySelector('.audioPlayer');
-
-instruments.addEventListener('dragstart', function(e) {
-    e.dataTransfer.setData('text/plain', 'dragging');
-});
-
-dropzone.addEventListener('dragover', function(e) {
-    e.preventDefault();
-});
-
-dropzone.addEventListener('drop', function(e) {
-    e.preventDefault();
-    const data = e.dataTransfer.getData('text/plain');
-    if (data === 'dragging') {
-        // Play music
-        audioPlayer.play();
-    }
-});
 
 // drop section
 
 let draggedPiece = null;
 
 function handleStartDrag() { 
-	console.log('started dragging this piece:', this);
-	draggedPiece = this;
+  console.log('started dragging this piece:', this);
+  draggedPiece = this.cloneNode(true); // Clone the node being dragged
 }
 
 function handleDragOver(e) { 
@@ -36,14 +18,13 @@ function handleDragOver(e) {
 
 
 function handleDrop(e) { 
-	console.log("drag event",e)
-	e.preventDefault();
-	console.log('dropped something on me');
+  console.log("drag event", e);
+  e.preventDefault();
+  console.log('dropped something on me');
 
-    if (this.childElementCount == 0){
-
-	this.appendChild(draggedPiece);
-	}
+  if (this.childElementCount == 0 && draggedPiece !== null) {
+      this.appendChild(draggedPiece);
+  }
 }
 
 instruments.addEventListener("dragstart", handleStartDrag);
@@ -51,6 +32,25 @@ instruments.addEventListener("dragstart", handleStartDrag);
 dropzone.addEventListener("dragover", handleDragOver);
 
 dropzone.addEventListener("drop", handleDrop);
+
+// Audio section
+
+function loadAudio(trackRef) {
+  const audio = document.querySelector(`audio[data-trackref="${trackRef}"]`);
+
+  audio.volume = volumeControl.value / 100;
+  audio.src = `audio/${trackRef}.mp3`;
+  audioPlayer.play();
+}
+
+function playAudio() {
+  const draggedPiece = dropzone.querySelectorAll('img[data-trackref]');
+
+  draggedPiece.forEach(img => {
+    const trackRef = img.getAttribute('data-trackref');
+    loadAudio(trackRef);
+  });
+}
 
 const audio = document.querySelector('.audioPlayer');
 const playBtn = document.querySelector('#play-btn');
@@ -71,20 +71,20 @@ console.log("Volume Control:", volumeControl);
 
 playBtn.addEventListener('click', () => {
   console.log("Play button clicked");
-  audio.play();
+  audioPlayer.play();
 });
 
 pauseBtn.addEventListener('click', () => {
   console.log("Pause button clicked");
-  audio.pause();
+  audioPlayer.pause();
 });
 
 rewindBtn.addEventListener('click', () => {
   console.log("Rewind button clicked");
-  audio.currentTime = 0;
+  audioPlayer.currentTime = 0;
 });
 
 volumeControl.addEventListener('input', () => {
   console.log("Volume changed");
-  audio.volume = volumeControl.value;
+  audioPlayer.volume = volumeControl.value;
 });

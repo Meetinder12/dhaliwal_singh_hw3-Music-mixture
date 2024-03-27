@@ -38,7 +38,7 @@ h1 {
 .music-instruments, .musicboard {
     margin-top: 40px;
     height: 100%;
-	border: medium dashed #ffffff;
+	border: medium dashed #ffffff00;
 	color: inherit;
 	overflow: hidden;
 
@@ -50,23 +50,28 @@ h1 {
     padding-left: 250px;
 	display: flex;
 	flex-direction: row;
+    position: absolute;
+}
+
+#instruments img{ 
+    padding-right: 20px;
 }
 
 .drop-zone {
-    height: 200px;
+    height: 400px;
+    width: 1000px;
+    margin-left: 300px;
+    padding-left: 250px;
     background: #ffffff5f;
     display: flex;
     flex-wrap: wrap;
-}
-
-.dropzone {
-    width: 20%;
-    height: 20%;
     position: relative;
 }
 
 
 
+
+.track-ref { cursor: pointer; padding: 1em; }
 
 
 /* audio { display: block; } */
