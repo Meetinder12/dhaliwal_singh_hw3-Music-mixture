@@ -13,18 +13,21 @@
 
     <main>
 
+        <p>Drop three music instruments in dropzone</p>
+
         <section class="musicboard">
 
         <div class="drop-zone">
 
+
         </div>
 
 
-        <audio data-trackref="guitarop" loop ></audio>
-        <audio data-trackref="drum1" loop ></audio>
-        <audio data-trackref="piano" loop ></audio>
-        <audio data-trackref="violin" loop ></audio>
-        <audio data-trackref="flute" loop ></audio>
+        <audio src="audio/guitarop.mp3" data-trackref="guitarop" loop ></audio>
+        <audio src="audio/drum1.mp3" data-trackref="drum1" loop ></audio>
+        <audio src="audio/piano.mp3" data-trackref="piano" loop ></audio>
+        <audio src="audio/violin.mp3" data-trackref="violin" loop ></audio>
+        <audio src="audio/flute.mp3" data-trackref="flute" loop ></audio>
 
         <div id="instruments" class="music-instruments">
 
@@ -33,31 +36,31 @@
             </div>
 
             <div>
-            <img src="images/drum.jpg" class="drum" alt="Drum" data-trackref="drum1">
+                <img src="images/drum.jpg" class="drum" alt="Drum" data-trackref="drum1">
             </div>
 
             <div>
-            <img src="images/piano.jpg" class="piano" alt="piano" data-trackref="piano">
+                <img src="images/piano.jpg" class="piano" alt="piano" data-trackref="piano">
             </div>
 
             <div>
-            <img src="images/volin.jpg" class="volin" alt="Volin" data-trackref="violin">
+                <img src="images/volin.jpg" class="volin" alt="Volin" data-trackref="violin">
             </div>
 
             <div>
-            <img src="images/flute.jpg" class="flute" alt="Flute" data-trackref="flute">
+                <img src="images/flute.jpg" class="flute" alt="Flute" data-trackref="flute">
             </div>
 
         </div>
 
     </section>
 
-        <div id="audio-controls">
-            <button id="play-btn">Play</button>
-            <button id="pause-btn">Pause</button>
-            <button id="rewind-btn">Rewind</button>
-            <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1">
-          </div>
+    <div id="audio-controls">
+        <button id="play-btn">Play</button>
+        <button id="pause-btn">Pause</button>
+        <button id="rewind-btn">Rewind</button>
+        <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1">
+      </div>
           
         <script src="js/main.js"></script>
     </main>
