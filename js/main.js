@@ -1,11 +1,14 @@
+
 const instruments = document.querySelectorAll('#instruments div img');
 const dropzone = document.querySelector('.drop-zone');
 let currentAudio = null;
+
 
 function handleStartDrag() {
     console.log('started dragging this piece:', this);
     draggedPiece = this.cloneNode(true); // Clone the node being dragged
 }
+
 
 function handleDragOver(e) {
     e.preventDefault();
@@ -59,16 +62,21 @@ const volumeControl = document.getElementById('volume-control');
 playBtn.addEventListener('click', () => {
     if (currentAudio) {
         currentAudio.play();
+
+
     }
 });
 
 pauseBtn.addEventListener('click', () => {
+
     if (currentAudio) {
         currentAudio.pause();
+
     }
 });
 
 rewindBtn.addEventListener('click', () => {
+
     if (currentAudio) {
         currentAudio.currentTime = 0;
     }
@@ -78,4 +86,6 @@ volumeControl.addEventListener('input', () => {
     if (currentAudio) {
         currentAudio.volume = volumeControl.value;
     }
+
 });
+
