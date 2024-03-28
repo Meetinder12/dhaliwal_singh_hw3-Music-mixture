@@ -1,4 +1,3 @@
-
 const instruments = document.querySelector('#instruments');
 const dropzone = document.querySelector('.dropzone');
 const audioPlayer = document.querySelector('.audioPlayer');
@@ -21,23 +20,27 @@ dropzone.addEventListener('drop', function(e) {
 });
 
 const audio = document.querySelector('#audio');
-  const playBtn = document.querySelector('#play-btn');
-  const pauseBtn = document.querySelector('#pause-btn');
-  const rewindBtn = document.querySelector('#rewind-btn');
-  const volumeControl = document.querySelector('#volume-control');
+const playBtn = document.querySelector('#play-btn');
+const pauseBtn = document.querySelector('#pause-btn');
+const rewindBtn = document.querySelector('#rewind-btn');
+const volumeControl = document.querySelector('#volume-control');
 
-  playBtn.addEventListener('click', () => {
-    audio.play();
-  });
+playBtn.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+    }
+});
 
-  pauseBtn.addEventListener('click', () => {
-    audio.pause();
-  });
+pauseBtn.addEventListener('click', () => {
+    if (!audio.paused) {
+        audio.pause();
+    }
+});
 
-  rewindBtn.addEventListener('click', () => {
+rewindBtn.addEventListener('click', () => {
     audio.currentTime = 0;
-  });
+});
 
-  volumeControl.addEventListener('input', () => {
+volumeControl.addEventListener('input', () => {
     audio.volume = volumeControl.value;
-  });
+});
