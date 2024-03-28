@@ -1,90 +1,81 @@
-const instruments = document.querySelector('#instruments div');
+const instruments = document.querySelectorAll('#instruments div img');
 const dropzone = document.querySelector('.drop-zone');
-const audioPlayer = document.querySelector('.audioPlayer');
+let currentAudio = null;
 
-// drop section
-
-let draggedPiece = null;
-
-function handleStartDrag() { 
-  console.log('started dragging this piece:', this);
-  draggedPiece = this.cloneNode(true); // Clone the node being dragged
+function handleStartDrag() {
+    console.log('started dragging this piece:', this);
+    draggedPiece = this.cloneNode(true); // Clone the node being dragged
 }
 
-function handleDragOver(e) { 
-	e.preventDefault(); 
-	console.log('dragged over me'); 
+function handleDragOver(e) {
+    e.preventDefault();
+    console.log('dragged over me');
 }
 
+function handleDrop(e) {
+    console.log("drag event", e);
+    e.preventDefault();
+    console.log('dropped something on me');
 
-function handleDrop(e) { 
-  console.log("drag event", e);
-  e.preventDefault();
-  console.log('dropped something on me');
+    const trackRef = draggedPiece.getAttribute('data-trackref');
+    const droppedPiece = draggedPiece.cloneNode(true); // Clone the dragged piece
 
-  if (this.childElementCount == 0 && draggedPiece !== null) {
-      this.appendChild(draggedPiece);
-  }
+    if (droppedPiece !== null) {
+        this.appendChild(droppedPiece);
+        playAudio(trackRef); // Play audio associated with the dropped image
+    }
 }
 
-instruments.addEventListener("dragstart", handleStartDrag);
+instruments.forEach(instrument => {
+    instrument.addEventListener("dragstart", handleStartDrag);
+});
 
 dropzone.addEventListener("dragover", handleDragOver);
-
 dropzone.addEventListener("drop", handleDrop);
 
 // Audio section
 
 function loadAudio(trackRef) {
-  const audio = document.querySelector(`audio[data-trackref="${trackRef}"]`);
-
-  audio.volume = volumeControl.value / 100;
-  audio.src = `audio/${trackRef}.mp3`;
-  audioPlayer.play();
+    const audio = document.querySelector(`audio[data-trackref="${trackRef}"]`);
+    audio.volume = Math.min(volumeControl.value / 100 * 8, 1);
+    audio.src = `audio/${trackRef}.mp3`;
+    return audio;
 }
 
-function playAudio() {
-  const draggedPiece = dropzone.querySelectorAll('img[data-trackref]');
-
-  draggedPiece.forEach(img => {
-    const trackRef = img.getAttribute('data-trackref');
-    loadAudio(trackRef);
-  });
+function playAudio(trackRef) {
+    if (currentAudio) {
+        currentAudio.pause(); // Pause the current audio if it's playing
+    }
+    const audio = loadAudio(trackRef);
+    audio.play();
+    currentAudio = audio; // Update the current audio
 }
 
-const audio = document.querySelector('.audioPlayer');
-const playBtn = document.querySelector('#play-btn');
-const pauseBtn = document.querySelector('#pause-btn');
-const rewindBtn = document.querySelector('#rewind-btn');
-const volumeControl = document.querySelector('#volume-control');
-
-// Check if the audio element is properly selected
-console.log("Audio element:", audio);
-
-// Check if the buttons are properly selected
-console.log("Play Button:", playBtn);
-console.log("Pause Button:", pauseBtn);
-console.log("Rewind Button:", rewindBtn);
-
-// Check if volume control is properly selected
-console.log("Volume Control:", volumeControl);
+const playBtn = document.getElementById('play-btn');
+const pauseBtn = document.getElementById('pause-btn');
+const rewindBtn = document.getElementById('rewind-btn');
+const volumeControl = document.getElementById('volume-control');
 
 playBtn.addEventListener('click', () => {
-  console.log("Play button clicked");
-  audioPlayer.play();
+    if (currentAudio) {
+        currentAudio.play();
+    }
 });
 
 pauseBtn.addEventListener('click', () => {
-  console.log("Pause button clicked");
-  audioPlayer.pause();
+    if (currentAudio) {
+        currentAudio.pause();
+    }
 });
 
 rewindBtn.addEventListener('click', () => {
-  console.log("Rewind button clicked");
-  audioPlayer.currentTime = 0;
+    if (currentAudio) {
+        currentAudio.currentTime = 0;
+    }
 });
 
 volumeControl.addEventListener('input', () => {
-  console.log("Volume changed");
-  audioPlayer.volume = volumeControl.value;
+    if (currentAudio) {
+        currentAudio.volume = volumeControl.value;
+    }
 });
