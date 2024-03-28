@@ -1,17 +1,23 @@
 
 /* It is empty at the moment  */
-* {
-    font-family: Arial, Helvetica, sans-serif;
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
 }
 
-html{
-    background: url(../images/background.jpg) ;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+body {
+	margin: 0px;
+	border: 0px;
+	background-image:url(../images/background.jpg);
+	background-repeat: no-repeat;
     background-size: cover;
-    background-color: rgba(156, 120, 73, 0.762);
+	background-color: rgba(156, 120, 73, 0.762);
     background-blend-mode: overlay;
+	color:#FFF;
+	font-family: 'Luckiest Guy', sans-serif;
+	font-size:16px;
 }
 
 h1 {
@@ -21,44 +27,52 @@ h1 {
 
 }
 
-#container {
-    position: relative;
+#musicboard {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-#container div{
-    display: inline;
-}
-
-.dropzone {
-    width: 100%;
+.music-instruments, .musicboard {
+    margin-top: 40px;
     height: 100%;
-    border: 2px dashed #ccc;
-    text-align: center;
-    padding: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    box-sizing: border-box;
-    color: #000000;
+	border: medium dashed #ffffff00;
+	color: inherit;
+	overflow: hidden;
+
 }
 
-
-#instruments {
-    text-align: center;
-    margin-top: 60px;
+.music-instruments {
+	height: 200px;
+	margin-top: 20px;
+    padding-left: 250px;
+	display: flex;
+	flex-direction: row;
     position: absolute;
-    cursor: grab;
 }
 
-#instruments div {
-    margin-bottom: 50px;
-    display: inline;    
+#instruments img{ 
+    padding-right: 20px;
 }
 
-#instruments img {
-    width: 10%;
-    aspect-ratio: 3/2;
+.drop-zone {
+    height: 400px;
+    width: 1000px;
+    margin-left: 300px;
+    padding-left: 250px;
+    background: #ffffff5f;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
 }
+
+
+
+
+.track-ref { cursor: pointer; padding: 1em; }
+
 
 /* audio { display: block; } */
 

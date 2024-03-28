@@ -12,42 +12,45 @@
     </header>
 
     <main>
-        <section id="container">
-            <div class="dropzone">Drop music on me</div>
-            <div class="dropzone">Drop music on me</div>
-            <div class="dropzone">Drop music on me</div>
-            <div class="dropzone">Drop music on me</div>
-            <div class="dropzone">Drop music on me</div>
-        </section>
 
-        <Section id="instruments">
+        <section class="musicboard">
+
+        <div class="drop-zone">
+
+        </div>
+
+
+        <audio data-trackref="guitarop" loop ></audio>
+        <audio data-trackref="drum1" loop ></audio>
+        <audio data-trackref="piano" loop ></audio>
+        <audio data-trackref="violin" loop ></audio>
+        <audio data-trackref="flute" loop ></audio>
+
+        <div id="instruments" class="music-instruments">
 
             <div>
-                <img src="images/guitar.jpg" alt="guitar">
-            <audio class="audioPlayer" src="audio/guitarop.mp3">guitar</audio>
+                <img src="images/guitar.jpg" class="guitar" alt="guitar" data-trackref="guitarop">
             </div>
 
             <div>
-            <img src="images/drum.jpg" alt="Drum">
-            <audio class="audioPlayer" src="audio/grinder-drum-loop-6697.mp3">drum Beat</audio>
+            <img src="images/drum.jpg" class="drum" alt="Drum" data-trackref="drum1">
             </div>
 
             <div>
-            <img src="images/piano.jpg" alt="piano">
-            <audio class="audioPlayer" src="audio/the-last-piano-112677.mp3">piano</audio>
+            <img src="images/piano.jpg" class="piano" alt="piano" data-trackref="piano">
             </div>
 
             <div>
-            <img src="images/volin.jpg" alt="Volin">
-            <audio class="audioPlayer" src="audio/violin-music-64019.mp3">Volin</audio>
+            <img src="images/volin.jpg" class="volin" alt="Volin" data-trackref="violin">
             </div>
 
             <div>
-            <img src="images/flute.jpg" alt="Flute">
-            <audio class="audioPlayer" src="audio/Dreaming-Under-The-Stars-MP3(chosic.com).mp3">flute</audio>
+            <img src="images/flute.jpg" class="flute" alt="Flute" data-trackref="flute">
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
         <div id="audio-controls">
             <button id="play-btn">Play</button>

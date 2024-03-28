@@ -1,23 +1,18 @@
-const instruments = document.querySelector('#instruments');
-const dropzone = document.querySelector('.dropzone');
+
+const instruments = document.querySelector('#instruments div');
+const dropzone = document.querySelector('.drop-zone');
+
 const audioPlayer = document.querySelector('.audioPlayer');
 
-instruments.addEventListener('dragstart', function(e) {
-    e.dataTransfer.setData('text/plain', 'dragging');
-});
+// drop section
 
-dropzone.addEventListener('dragover', function(e) {
-    e.preventDefault();
-});
+let draggedPiece = null;
 
-dropzone.addEventListener('drop', function(e) {
-    e.preventDefault();
-    const data = e.dataTransfer.getData('text/plain');
-    if (data === 'dragging') {
-        // Play music
-        audioPlayer.play();
-    }
-});
+function handleStartDrag() { 
+  console.log('started dragging this piece:', this);
+  draggedPiece = this.cloneNode(true); // Clone the node being dragged
+}
+
 
 const audio = document.querySelector('#audio');
 const playBtn = document.querySelector('#play-btn');
@@ -44,3 +39,4 @@ rewindBtn.addEventListener('click', () => {
 volumeControl.addEventListener('input', () => {
     audio.volume = volumeControl.value;
 });
+
